@@ -10,16 +10,34 @@ Lengkapi fungsi myProfile di bawah ini dengan membuat variabel dengan ketentuan 
 Dan Cetak setiap variabel ke layar saat variable myProfile di panggil
  */
 fun myProfile() {
+    val firstName = "Muhammad"
+    val lastName = "Fachrizal Akbar"
+    val age = 20
+    val status = true
 
+    println("====My Profile====")
+    println("My Fullname is $firstName $lastName")
+    println("My Age is $age years old")
+    if (status){
+        println("Im still single\n")
+    }else{
+        println("Im not Single\n")
+    }
 }
-
 
 /**
  *  Latihan 2
  *  Lengkapi fungsi di bawah ini agar dapat mencetak nilai dari parameter-parameter yang ada dengan fungsi println
  */
 fun groupDetail(groupId: String, groupMember: List<Any>, session: String): Any {
-    return ""
+    val group = """
+        ===Detail Group===
+        Id Group: $groupId
+        Group Member: $groupMember
+        Session: $session
+    """.trimIndent()
+
+    return println(group)
 }
 
 /**
@@ -29,8 +47,14 @@ fun groupDetail(groupId: String, groupMember: List<Any>, session: String): Any {
  *
  */
 fun myTeam(): List<Any> {
+    val teamGroup = listOf(
+        "Muhammad Fachrizal Akbar",
+        "Alvian Diva Awangga",
+        "Kristo Pandapotan Samosir",
+        "Birrul Hasibuan",
+        "Linda Erlinda Sari")
 
-    return listOf()
+    return listOf(teamGroup[0])
 }
 
 /**
@@ -41,10 +65,16 @@ fun myTeam(): List<Any> {
  *
  */
 fun totalMember(): Int {
-    val mentor = arrayOf<String>()
-    val countOfGroup = arrayOf<String>()
+    val mentor = arrayOf("Bang Ilham","Kak Peja")
+    val countOfGroup = arrayOf(
+        "Muhammad Fachrizal Akbar",
+        "Alvian Diva Awangga",
+        "Kristo Pandapotan Samosir",
+        "Birrul Hasibuan",
+        "Linda Erlinda Sari"
+    )
 
-    return 0
+    return mentor.size + countOfGroup.size
 }
 
 fun main() {
@@ -62,6 +92,12 @@ fun main() {
      *  Ubah nilai argumen-argumen dari fungsi groupDetail di bawah ini sesuai dengan data group kamu
      *
      */
-    groupDetail("", listOf(), "")
+    groupDetail("10", listOf(
+        "Muhammad Fachrizal Akbar",
+        "Alvian Diva Awangga",
+        "Kristo Pandapotan Samosir",
+        "Birrul Hasibuan",
+        "Linda Erlinda Sari"
+    ), "Afternoon B")
 
 }

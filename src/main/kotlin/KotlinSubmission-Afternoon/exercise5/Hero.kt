@@ -22,17 +22,23 @@ class Hero {
         println("===========================")
     }
 
-    private fun checkHealth() {
+    private fun checkHealth() : Boolean{
         if (health <= 0) {
             println("Anda telah mati $name")
+            return false
+        } else {
+            return true
         }
     }
 
-    fun jalan() {
-        checkHealth()
-        println("$name sedang berjalan...")
-        health -= 1
+    fun jalan(times: Int) {
+        if (checkHealth()) {
+            val healthGrow = 1*times
+            println("$name telah berjalan sebanyak $times kali...(health = -$healthGrow)")
+            health -= healthGrow
+        }
     }
+
 
 
     /**
@@ -49,6 +55,46 @@ class Hero {
       Contoh fungsi bisa mengikuti fungsi jalan() diatas.
 
     */
+    fun lari(times: Int) {
+        if (checkHealth()) {
+            val healthGrow = 2*times
+            println("$name telah berlari sebanyak $times kali...(health = -$healthGrow)")
+            health -= healthGrow
+        }
+    }
+
+    fun makan(times: Int) {
+        if (checkHealth()) {
+            val healthGrow = 2*times
+            println("$name telah makan sebanyak $times kali...(health = +$healthGrow)")
+            health += healthGrow
+        }
+    }
+
+    fun minum(times: Int) {
+        if (checkHealth()) {
+            val healthGrow = 2*times
+            println("$name telah minum sebanyak $times kali...(health = +$healthGrow)")
+            health += healthGrow
+        }
+    }
+
+    fun lompat(times: Int) {
+        if (checkHealth()) {
+            val healthGrow = 2*times
+            println("$name telah melompat sebanyak $times kali...(health = -$healthGrow)")
+            health -= healthGrow
+        }
+    }
+
+    fun duduk(times: Int) {
+        if (checkHealth()) {
+            val healthGrow = 1*times
+            println("$name telah duduk sebanyak $times kali...(health = +$healthGrow)")
+            health += healthGrow
+        }
+    }
+
     
 }
 

@@ -16,5 +16,23 @@ fun main() {
     - Isi variabel result dengan nilai: 'Anda mendapatkan nilai E.'
      */
     // Buat di bawah sini
+    val score = 69
+    println("Your score = $score")
+
+    val result = if (score >= 90){
+        "Congratulation! You have an A score"
+    }else if (score in 80..89){
+        "You have B score"
+    }else if (score in 70..79){
+        "You have C Score"
+    }else if (score in 60..69){
+        "You have D Score"
+    }else{
+        "Im Sorry You have F Score"
+    }
+
+    println(result)
+
+
 
 }
